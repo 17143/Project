@@ -1,5 +1,5 @@
 from flask import Flask
-
+import sqlite3
 from config import Config
 
 app = Flask(__name__)
@@ -16,7 +16,14 @@ def help():
 
 @app.route("/Project/<string:project_name>")
 def Project(project_name):
-    return "Here is a {} Project".format(project_name)
+    connection = sqlite3.connect('portfolio.db')
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM Project where name = ? ", (project_name))
+    project = cursor.fetchone()
+    connection.close()
+    return "<h1>{}</h1><p>{}</p>".format(project[1], project[6])
+
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
