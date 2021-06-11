@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=New+Tegomin&display=swap');
+
+html {
+  font-family: 'New Tegomin', serif;
+  background-color: rgb(255, 255, 255);
+}
+
+h1, h3 {
+  font-family: 'Dela Gothic One', cursive;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  background-color: rgb(0, 195, 255);
+  width: 100%
+}
+
+h2 {
+  color: white;
+  background-color: rgba(74, 31, 228, 0.685);
+  font-weight: 600;
+  width: 100%;
+}
+
+h2 a {
+  color: rgb(0, 0, 0);
+}
+
+h3 {
+  color: rgb(255, 255, 255);
+  font-weight: 200;
+  font-size: 20px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+}

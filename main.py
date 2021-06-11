@@ -1,22 +1,27 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for
+from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 from config import Config
 
+
 app = Flask(__name__)
 app.config.from_object(Config)
+db =  SQLAlchemy(app)
 
+import models
 
 @app.route('/')
 def home():
-    return"hello world"
+    return render_template('home.html')
 
-@app.route("/help")
+@app.route("/Help")
 def help():
     return "Help desk."
 
 @app.route("/projects")
-def models():
-    return "Projects"
+def projects():
+    projects = models.Project.query.all()
+    return render_template('projects.html')
 
 
 @app.route("/Project/<string:project_name>")

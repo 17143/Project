@@ -1,6 +1,6 @@
 from main import db
 
-class Project(db.model):
+class Project(db.Model):
     __tablename__ = 'Project'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
@@ -8,6 +8,6 @@ class Project(db.model):
     description = db.Column(db.Text())
     category = db.Column(db.Integer)
 
-class Category(db.model):
+class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
