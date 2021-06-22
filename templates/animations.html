@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% for animation in animations %}
+<p>Animation name:  {{ animation.name }}<br>
+Description: {{ animation.description }}</p>
+{% endfor %}
+
+{% endblock %}

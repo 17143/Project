@@ -24,10 +24,24 @@ def projects():
     projects = models.Project.query.all()
     return render_template('projects.html', projects=projects)
 
-@app.route('/project/<int:id>')
-def project(id):
-  project = models.Pizza.query.filter_by(id=id).first_or_404()
-  return render_template('pizza.html', project=project)
+@app.route('/games')
+def games():
+  games = models.Project.query.filter_by(category=1).all()
+  print(games)
+  return render_template('games.html', games=games)
+
+@app.route('/blender')
+def blender():
+  blender = models.Project.query.filter_by(category=3).all()
+  print(blender)
+  return render_template('blender.html', blender=blender)
+
+@app.route('/animations')
+def animations():
+  animations = models.Project.query.filter_by(category=2).all()
+  print(animations)
+  return render_template('animations.html', animations=animations)
+
 
 # @app.route("/Project/<string:project_name>")
 # def Project(project_name):

@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% for blender in blender %}
+<p>Blender name:  {{ blender.name }}<br>
+Description: {{ blender.description }}</p>
+{% endfor %}
+
+{% endblock %}
