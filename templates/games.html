@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% for game in games %}
+<p>Game name:  {{ game.name }}<br>
+Description: {{ game.description }}</p>
+{% endfor %}
+
+{% endblock %}
