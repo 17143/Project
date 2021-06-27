@@ -3,8 +3,9 @@
 {% block content %}
 
 {% for game in games %}
-<p>Game name:  {{ game.name }}<br>
-Description: {{ game.description }}</p>
+<p>Game name:  <a href="{{ url_for('game', id=game.id) }}">{{ game.name }}</a> </p>
+<p>Description: {{ game.description }}</p>
+
 {% endfor %}
 
 {% endblock %}
