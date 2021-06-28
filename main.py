@@ -27,21 +27,21 @@ def projects():
     projects = models.Project.query.all()
     return render_template('projects.html', projects=projects)
 
-#List's all Games
+# List's all Games
 @app.route('/games')
 def games():
   games = models.Project.query.filter_by(category=1).all()
   print(games)
   return render_template('games.html', games=games)
 
-#List's all Blender models
+# List's all Blender models
 @app.route('/blendermodels')
 def blendermodels():
   blendermodels = models.Project.query.filter_by(category=3).all()
   print(blendermodels)
   return render_template('blendermodels.html', blendermodels=blendermodels)
 
-#Lists all animations
+# Lists all animations
 @app.route('/animations')
 def animations():
   animations = models.Project.query.filter_by(category=2).all()
@@ -62,10 +62,25 @@ def blender(id):
   print(blender)
   return render_template('blender.html', blender=blender)
 
+@app.route('/category/<string:category_name>')
+def category(category_name):
+  if category_name == "games":
+     games = models.Project.query.filter_by(category=1).all()
+     print(games)
+     return render_template('games.html', games=games)
+  if category_name == "blendermodels":
+      blendermodels = models.Project.query.filter_by(category=3).all()
+      print(blendermodels)
+      return render_template('blendermodels.html', blendermodels=blendermodels)
+  if category_name == "animations":
+    animations = models.Project.query.filter_by(category=2).all()
+    print(animations)
+    return render_template('animations.html', animations=animations)
 
 #Basic SQL query without the use of SQALchemy
 # @app.route("/Project/<string:project_name>")
 # def Project(project_name):
+
 #     connection = sqlite3.connect('portfolio.db')
 #     cursor = connection.cursor()
 #     cursor.execute("SELECT * FROM Project where name = ? ", (project_name,))
