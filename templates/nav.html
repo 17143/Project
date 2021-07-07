@@ -1,7 +1,9 @@
 <h2>
   <a href="{{ url_for('home') }}">HOME</a> 
   <a href="{{ url_for('projects') }}">ALL PROJECTS</a> 
-  <a href="{{ url_for('games') }}">GAMES</a> 
-  <a href="{{ url_for('blendermodels') }}">BLENDER MODELS</a> 
-  <a href="{{ url_for('animations') }}">ANIMATIONS</a>
+  <a href="{{ url_for('category', category_name='games') }}"> GAMES  </a> 
+  <a href="{{ url_for('category', category_name='blendermodels') }}"> BLENDER MODELS </a> 
+  <a href="{{ url_for('category', category_name='animations') }}"> ANIMATIONS </a> 
+  <a href="{{ url_for('blendermodelss') }}"> test </a> 
+
 </h2>

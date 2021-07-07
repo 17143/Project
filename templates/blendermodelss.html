@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{% for blendermodel in blendermodels %}
+{% for blendermodel in blendermodelss %}
 <p>Blendermodel name:  <a href="{{ url_for('blender', id=blendermodel.id) }}">{{ blendermodel.name }}</a> </p>
 <p>Description: {{ blendermodel.description }}</p>
 

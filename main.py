@@ -25,29 +25,8 @@ def help():
 @app.route("/projects")
 def projects():
     projects = models.Project.query.all()
-    return render_template('projects.html', projects=projects)
-
-# List's all Games
-@app.route('/games')
-def games():
-  games = models.Project.query.filter_by(category=1).all()
-  print(games)
-  return render_template('games.html', games=games)
-
-# List's all Blender models
-@app.route('/blendermodels')
-def blendermodels():
-  blendermodels = models.Project.query.filter_by(category=3).all()
-  print(blendermodels)
-  return render_template('blendermodels.html', blendermodels=blendermodels)
-
-# Lists all animations
-@app.route('/animations')
-def animations():
-  animations = models.Project.query.filter_by(category=2).all()
-  print(animations)
-  return render_template('animations.html', animations=animations)
-
+    return render_template('all_models.html', projects=projects)
+  
 #List's individual games
 @app.route('/game/<int:id>')
 def game(id):
@@ -55,27 +34,35 @@ def game(id):
   print(game)
   return render_template('game.html', game=game)
 
-#lists individual blender models
+
+#route for individul projects
 @app.route('/blender/<int:id>')
 def blender(id):
   blender = models.Project.query.filter_by(id=id).first_or_404()
   print(blender)
   return render_template('blender.html', blender=blender)
 
+
+#route for projects in different category's
 @app.route('/category/<string:category_name>')
 def category(category_name):
   if category_name == "games":
-     games = models.Project.query.filter_by(category=1).all()
-     print(games)
-     return render_template('games.html', games=games)
+     data = models.Project.query.filter_by(category=1).all()
+     
   if category_name == "blendermodels":
-      blendermodels = models.Project.query.filter_by(category=3).all()
-      print(blendermodels)
-      return render_template('blendermodels.html', blendermodels=blendermodels)
+      data = models.Project.query.filter_by(category=3).all()
+      
   if category_name == "animations":
-    animations = models.Project.query.filter_by(category=2).all()
-    print(animations)
-    return render_template('animations.html', animations=animations)
+    data = models.Project.query.filter_by(category=2).all()
+
+  return render_template('projects.html', data=data)
+
+#test
+@app.route('/blendermodelss')
+def blendermodelss():
+  blendermodelss = models.Project.query.filter_by(category=3).all()
+  print(blendermodelss)
+  return render_template('blendermodelss.html', blendermodelss=blendermodelss)
 
 #Basic SQL query without the use of SQALchemy
 # @app.route("/Project/<string:project_name>")
