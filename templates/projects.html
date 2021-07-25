@@ -3,8 +3,9 @@
 {% block content %}
 
 {% for data in data %}
-<p>Project name:  {{ data.name }}</p>
+<p>Project name:  <a href="{{ url_for('project', id=data.id) }}">{{ data.name }}</a> </p>
 <p>Description: {{ data.description }}</p>
+
 
 {% endfor %}
 

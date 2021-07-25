@@ -25,23 +25,14 @@ def help():
 @app.route("/projects")
 def projects():
     projects = models.Project.query.all()
-    return render_template('all_models.html', projects=projects)
-  
-#List's individual games
-@app.route('/game/<int:id>')
-def game(id):
-  game = models.Project.query.filter_by(id=id).first_or_404()
-  print(game)
-  return render_template('game.html', game=game)
-
+    return render_template('all.html', projects=projects)
 
 #route for individul projects
-@app.route('/blender/<int:id>')
-def blender(id):
-  blender = models.Project.query.filter_by(id=id).first_or_404()
-  print(blender)
-  return render_template('blender.html', blender=blender)
-
+@app.route('/project/<int:id>')
+def project(id):
+  project = models.Project.query.filter_by(id=id).first_or_404()
+  print(project)
+  return render_template('project.html', project=project)
 
 #route for projects in different category's
 @app.route('/category/<string:category_name>')
@@ -57,12 +48,6 @@ def category(category_name):
 
   return render_template('projects.html', data=data)
 
-#test
-@app.route('/blendermodelss')
-def blendermodelss():
-  blendermodelss = models.Project.query.filter_by(category=3).all()
-  print(blendermodelss)
-  return render_template('blendermodelss.html', blendermodelss=blendermodelss)
 
 #Basic SQL query without the use of SQALchemy
 # @app.route("/Project/<string:project_name>")

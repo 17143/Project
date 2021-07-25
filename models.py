@@ -16,12 +16,13 @@ class Project(db.Model):
     genre = db.relationship('Genre', secondary=Project_Genre, back_populates='project')
 
 class Category(db.Model):
+    __tablename__ = 'Category'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
 
 class Genre(db.Model):
     __tablename__ = 'Genre'
-    id = db.Column(db.integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
 
     project = db.relationship('Project', secondary=Project_Genre, back_populates='genre')
