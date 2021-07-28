@@ -9,15 +9,17 @@ h1, h3 {
   font-family: 'Dela Gothic One', cursive;
 }
 
-h1 {
-  color: rgb(240, 240, 240);
+.header {
+  color: #F1F1F1;
   background-color: rgb(40, 1, 55);
-  width: 100%
+  text-align: center;
+  padding: 20px;
 }
+
 
 h2 {
   color: white;
-  background-color: rgba(74, 31, 228, 0.685);
+  background-color: rgb(74, 31, 228, 0.685);
   font-weight: 600;
   width: 100%;
 }
@@ -36,3 +38,4 @@ footer {
   width: 100%;
   text-align: center;
 }
+
