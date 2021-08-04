@@ -2,8 +2,20 @@
 
 {% block content %}
 
-<p>Project name:  {{ project.name }}</p>
-<p>Description: {{ project.description }}</p>
+<h3>Project name:  {{ project.name }}</h3>
 
+<div class="row">
+    <div class="column photo">
+        <p>Photo: {{project.image}} </p>
+    </div>
+
+    <div class="column label">
+        <p>Model ID: {{ project.id }}</p>
+        <p>Software used: <br>Blender version 2.81<br> Photoshop</p>
+    </div>  
+    
+    <div class="column desc">
+        <p>Description: {{ project.description }}</p>
+    </div>
 
 {% endblock %}

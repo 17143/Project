@@ -5,8 +5,6 @@
 {% for data in data %}
 <p>Project name:  <a href="{{ url_for('project', id=data.id) }}">{{ data.name }}</a> </p>
 
-
-
 {% endfor %}
 
 {% endblock %}

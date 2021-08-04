@@ -5,7 +5,7 @@ html {
   background-color: rgb(255, 255, 255);
 }
 
-h1, h3 {
+h1 {
   font-family: 'Dela Gothic One', cursive;
 }
 
@@ -13,29 +13,101 @@ h1, h3 {
   color: #F1F1F1;
   background-color: rgb(40, 1, 55);
   text-align: center;
-  padding: 20px;
+  padding: 16px;
 }
 
+/*
+Nav bar
+*/
 
 h2 {
-  color: white;
-  background-color: rgb(74, 31, 228, 0.685);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
   font-weight: 600;
   width: 100%;
+  font-family: "Monaco", "Lucida Console", monospace;
 }
 
-h2 a {
-  color: rgb(0, 0, 0);
+li {
+  float: left;
 }
 
-h3 {
-  color: rgb(255, 255, 255);
-  font-weight: 200;
-  font-size: 20px;
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 8px 16px;
+  text-decoration: none;
 }
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+/* Add a gray right border to all list items, except the last item (last-child) */
+li {
+  border-right: 1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+/*
+main body CSS for home menu
+*/
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/*
+Individual project pages
+*/
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 6%;
+}
+
+.desc {
+  width: 40%;
+}
+
+.label {
+  width: 20%;
+}
+
+.photo {
+  width: 40%;
+}
+
+/*
+footer
+*/
 
 footer {
   width: 100%;
   text-align: center;
 }
-
