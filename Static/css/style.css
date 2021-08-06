@@ -88,7 +88,7 @@ Individual project pages
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
-  width: 6%;
+  width: 50%;
 }
 
 .desc {
@@ -102,6 +102,12 @@ Individual project pages
 .photo {
   width: 40%;
 }
+
+/*
+photo gallery
+*/
+
+
 
 /*
 footer
