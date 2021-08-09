@@ -2,9 +2,21 @@
 
 {% block content %}
 
-{% for data in data %}
-<p>Project name:  <a href="{{ url_for('project', id=data.id) }}">{{ data.name }}</a> </p>
+<div class="grid-container">
+        {% for data in data %}
+        <div class="grid-item">
+            <div class="gallery">
+                <a target="_blank" href="{{ url_for('project', id=data.id) }}">
+                  <img src= "{{ data.image }}" >
+                </a>
+                <div class="desc"><p>Project name:  {{ data.name }} </p></div>
+            </div>
+        </div>
+        {% endfor %}
+</div>
 
-{% endfor %}
+
+
+
 
 {% endblock %}

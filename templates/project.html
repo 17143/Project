@@ -5,18 +5,21 @@
 <h3>Project name:  {{ project.name }}</h3>
 
 <div class="row">
-    <div class="column.photo">
-        <img src= "{{ project.image }}" width="300" height="200">
+    <div class="column photo">
+        <div class="gallery">
+                <img src= "{{ project.image }}" width="600" height="400">
+            <div class="title">{{ project.name }}</div>
+        </div>
 
     </div>
 
-    <div class="column.label">
+    <div class="column label">
         <p>Model ID: {{ project.id }}</p>
         <p>Software used: <br>Blender version 2.81<br> Photoshop</p>
 
     </div>  
     
-    <div class="column.desc">
+    <div class="column desc">
         <p>Description: {{ project.description }}</p>
     </div>
 
